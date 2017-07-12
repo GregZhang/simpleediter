@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>editer</title>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/editer.js"></script>
+    <script>
+        $(function () {
+            $(document).ready(function () {
+                $('#editer').editer();
+            })
+        });
+
+
+    </script>
+
+</head>
+<body>
+<div id="testTEXT"></div>
+<button>add</button>
+<div id="editer" contenteditable="true">Hello World!
+    11111<span>1111</span>
+</div>
+</body>
+</html>
