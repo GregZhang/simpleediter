@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="lib/css/bootstrap.min.css" rel="stylesheet">
+    <script src="lib/jquery-3.1.1.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+</head>
+<body>
+<style type="text/css">
+
+    .vertical-tab > li.active > a, .vertical-tab > li.active > a:focus, .vertical-tab > li.active > a:hover {
+        /*border: solid #ccc;*/
+        /*border-width: 1px 0px 1px 1px;*/
+        /*background-color: #ffffff;*/
+        /*border-right: 1px solid #ffffff;*/
+        /*z-index: 2;*/
+    }
+
+    .vertical-tab > li > a {
+        border-radius: 4px 0px 0px 4px;
+    }
+
+    .vertical-tab-content {
+        padding: 5px;
+        margin-left: -1px;
+        margin-bottom: 2px;
+        border-radius: 4px 4px 4px 4px;
+        /*border: solid 1px #ccc;*/
+        color: #666;
+    }
+
+    .send {
+        position: relative;
+        width: 90%;
+        background: #FFFFFF;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px; /* 圆角 */
+        border: 1px solid #ccc;
+    }
+
+
+
+
+</style>
+
+<script type="text/javascript">
+    $(function () {
+        $('#vtab li').click(function () {
+            tops = $(this).offset().top - $('#vtab').offset().top + $('#vtab').scrollTop() - $('#vtab').height() / 4;
+            console.log(tops);
+            $('#vtab').animate({
+                scrollTop: tops
+            }, 'slow');
+        });
+    });
+</script>
+<div class="row">
+    <div class="col-xs-3">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tab vertical-tab" role="tablist" id="vtab">
+            <li role="presentation" class="active">
+                <a href="#home" aria-controls="home" role="tab"
+                   data-toggle="tab">date</a>
+            </li>
+            <li role="presentation">
+                <a href="#inbox" aria-controls="inbox" role="tab"
+                   data-toggle="tab">type</a>
+            </li>
+            <li role="presentation">
+                <a href="#outbox" aria-controls="outbox" role="tab"
+                   data-toggle="tab">area</a>
+            </li>
+        </ul>
+
+    </div>
+    <div class="col-xs-9">
+        <!-- Tab panes -->
+        <div class="tab-content vertical-tab-content">
+            <div role="tabpanel" class="tab-pane active" id="home">
+                date
+            </div>
+            <div role="tabpanel" class="tab-pane" id="inbox">
+                type
+            </div>
+            <div role="tabpanel" class="tab-pane" id="outbox">
+                area
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+</body>
+</html>
